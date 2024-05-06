@@ -14,8 +14,82 @@ function App() {
   const [imposters, setImposters] = useState(1);
   const [playing, setPlaying] = useState(false);
   const [playerArray, setPlayerArray] = useState([]);
-  const [showCategory, setShowCategory] = useState(true);
+
   const [currentPlayer, setCurrentPlayer] = useState(1);
+  const [showCategory, setShowCategory] = useState(() => {
+    const storedShowCategory = localStorage.getItem("showCategory");
+    return storedShowCategory !== null ? storedShowCategory === "true" : true;
+  });
+
+
+  const [wordArrays, setWordArrays] = useState(() => {
+    const storedWordArrays = JSON.parse(localStorage.getItem("wordArrays"));
+    return storedWordArrays || {
+      athletes: {
+        name: "Athletes",
+        include: true,
+        words: [
+          "LeBron James",
+          "Serena Williams",
+          "Cristiano Ronaldo",
+          "Lionel Messi",
+          "Tom Brady",
+          "Usain Bolt",
+          "Michael Phelps",
+          "Roger Federer",
+          "Simone Biles",
+          "Kevin Durant",
+          // Add more athletes as needed
+        ],
+      },
+      celebrities: {
+        name: "Celebrities",
+        include: true,
+        words: [
+          "Dwayne Johnson",
+          "Beyoncé",
+          "Taylor Swift",
+          "Ellen DeGeneres",
+          "Jennifer Lawrence",
+          "Robert Downey Jr.",
+          "Angelina Jolie",
+          "Leonardo DiCaprio",
+          "Oprah Winfrey",
+          "Kanye West",
+          // Add more celebrities as needed
+        ],
+      },
+      superheroes: {
+        name: "Superheroes",
+        include: true,
+        words: [
+          "Superman",
+          "Batman",
+          "Spider-Man",
+          "Wonder Woman",
+          "Iron Man",
+          "Captain America",
+          "Hulk",
+          "Thor",
+          "Black Panther",
+          "Captain Marvel",
+          // Add more superheroes as needed
+        ],
+      },
+      // Add more word arrays as needed
+    };
+  });
+
+  useEffect(() => {
+    localStorage.setItem("showCategory", showCategory);
+  }, [showCategory]);
+  useEffect(() => {
+    localStorage.setItem("wordArrays", JSON.stringify(wordArrays));
+  }, [wordArrays]);
+
+
+
+
 
   useEffect(() => {
     if (playing) {
@@ -32,60 +106,6 @@ function App() {
     }
   }, [playing, word, players, imposters]);
 
-  const [wordArrays, setWordArrays] = useState({
-    athletes: {
-      name: "Athletes",
-      include: true,
-      words: [
-        "LeBron James",
-        "Serena Williams",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Tom Brady",
-        "Usain Bolt",
-        "Michael Phelps",
-        "Roger Federer",
-        "Simone Biles",
-        "Kevin Durant",
-        // Add more athletes as needed
-      ],
-    },
-    celebrities: {
-      name: "Celebrities",
-      include: true,
-      words: [
-        "Dwayne Johnson",
-        "Beyoncé",
-        "Taylor Swift",
-        "Ellen DeGeneres",
-        "Jennifer Lawrence",
-        "Robert Downey Jr.",
-        "Angelina Jolie",
-        "Leonardo DiCaprio",
-        "Oprah Winfrey",
-        "Kanye West",
-        // Add more celebrities as needed
-      ],
-    },
-    superheroes: {
-      name: "Superheroes",
-      include: true,
-      words: [
-        "Superman",
-        "Batman",
-        "Spider-Man",
-        "Wonder Woman",
-        "Iron Man",
-        "Captain America",
-        "Hulk",
-        "Thor",
-        "Black Panther",
-        "Captain Marvel",
-        // Add more superheroes as needed
-      ],
-    },
-    // Add more word arrays as needed
-  });
 
   const toggleShowCategory = () => {
     setShowCategory(!showCategory);

@@ -7,7 +7,7 @@ export default function HomeScreen(props) {
       <div className="top">
         <div className="inline">
          
-          <i onClick={props.changeSettings} className="fa fa-gear white-text"></i> <h2>Settings</h2>
+          <i onClick={props.changeSettings} className="fa fa-gear white-text"></i> <h2 className="white-text">Settings</h2>
         </div>
       </div>
 

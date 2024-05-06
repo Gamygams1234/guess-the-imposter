@@ -48,7 +48,7 @@ export default function GameScreen(props) {
 
       {/* Use onMouseDown and onMouseUp events to trigger the toggle */}
       <button
-        className="button show-button"
+        className="button show-button grey-button"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp} // In case the user moves the mouse out while holding down

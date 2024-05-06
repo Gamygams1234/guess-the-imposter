@@ -102,6 +102,9 @@ body {
   cursor: pointer;
   font-weight: 700;
 }
+.grey-button{
+  background-color: $lightGrey;
+}
 
 .button:disabled {
   cursor: not-allowed; /* Change cursor to indicate it's not clickable */
