@@ -23,7 +23,7 @@ export default function HowToPlay(props) {
           <h2>Gameplay</h2>
           <p>1. Player 1 starts by viewing their card and passing it to the next player.</p>
           <p>2. Each player views their card and passes it along until all players have seen their cards.</p>
-          <p>3. The table takes turns giving one-word hints about the word without revealing it entirely.</p>
+          <p>3. The table takes turns giving a hint using a word or phrase about the word without revealing it entirely.</p>
           <p>4. Players discuss and try to identify the imposter.</p>
           <p>5. Players can give hints multiple times until there is a final suspect.</p>
         </section>
