@@ -1,13 +1,17 @@
 import React from "react";
 
 export default function HomeScreen(props) {
-  const { imposters, players, incrementPlayers, decrementPlayers, incrementImposters, decrementImposters } = props;
+  const { imposters, players, incrementPlayers, decrementPlayers, incrementImposters, decrementImposters, toggleInstructionsOn } = props;
   return (
     <div className="homepage page">
       <div className="top">
         <div className="inline">
          
           <i onClick={props.changeSettings} className="fa fa-gear white-text"></i> <h2 className="white-text">Settings</h2>
+        </div>
+        <div className="inline">
+         
+          <i onClick={toggleInstructionsOn} className="fa fa-info-circle white-text"></i> <h2 className="white-text">How to Play</h2>
         </div>
       </div>
 

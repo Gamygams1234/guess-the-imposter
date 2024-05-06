@@ -29,6 +29,12 @@ export default function GameScreen(props) {
     setShow(false);
   };
 
+  const goToNext = ()=>{
+    toggleShow()
+    nextPlayer()
+  }
+
+
   return (
     <div className="game-screen page">
       <div className="top">
@@ -45,20 +51,21 @@ export default function GameScreen(props) {
           <h1>Show Word</h1>
         </div>
       )}
+{!show? 
 
-      {/* Use onMouseDown and onMouseUp events to trigger the toggle */}
+
       <button
-        className="button show-button grey-button"
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp} // In case the user moves the mouse out while holding down
+        className="button mt-4 button"
+        onClick={()=>{setShow(true)}}// In case the user moves the mouse out while holding down
       >
         {show ? "Hide" : "Show"}
       </button>
+    :
 
-      <button className="button" onClick={nextPlayer}>
+      <button className=" mt-4  button" onClick={goToNext}>
         {currentPlayer===playerArray.length? "Submit": "Next Player"}
       </button>
+      }
     </div>
   );
 }

@@ -90,6 +90,14 @@ body {
   margin-bottom: 12rem !important;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .button {
   background-color: $green; /* Green */
   border: none;
@@ -102,7 +110,7 @@ body {
   cursor: pointer;
   font-weight: 700;
 }
-.grey-button{
+.grey-button {
   background-color: $lightGrey;
 }
 
@@ -127,7 +135,7 @@ h1 {
   justify-content: space-between;
   min-height: calc(100vh - 48px);
   padding: 24px;
-  .hero{
+  .hero {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -149,37 +157,35 @@ h1 {
     align-items: center;
     margin-bottom: 1rem;
     width: 100%;
-    font-size: 1.5rem; 
-
+    font-size: 1.5rem;
   }
-  
+
   .buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    span{
-      width:3rem;
+    span {
+      width: 3rem;
       text-align: center;
     }
   }
-  
+
   .buttons button {
     // margin: 0 0.5rem;
     background-color: $lightGrey; /* Green */
     border: none;
     color: $black;
-    padding: .5rem;
+    padding: 0.5rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1.25rem;
-    width:2.5rem;
+    width: 2.5rem;
     height: 2.5rem;
     cursor: pointer;
     font-weight: 700;
     border-radius: 3rem;
   }
-  
 }
 
 /* CSS for toggle switch */
@@ -231,15 +237,15 @@ input:checked + .slider:before {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    .inline{
+    .inline {
       display: flex;
       justify-content: center;
       align-items: center;
     }
     i {
       font-size: 2rem;
-      cursor: pointer; 
-      margin-right: .5rem;
+      cursor: pointer;
+      margin-right: 0.5rem;
     }
   }
 
@@ -334,14 +340,14 @@ input:checked + .slider:before {
   .word-display {
     flex-grow: 1;
     display: flex;
-flex-direction: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    h3{
+    h3 {
       font-size: 1.5rem;
     }
-    h1{
+    h1 {
       color: white;
     }
   }
@@ -363,5 +369,60 @@ flex-direction: column;
   }
   .button {
     border-radius: 1rem;
+  }
+}
+
+.instuctions-page {
+  display: flex;
+
+
+  flex-direction: column;
+  min-height: calc(100vh - 48px);
+
+  background-color: $black;
+  .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+padding-top: 20px;
+padding-bottom: 20px;
+    z-index: 100;
+    text-align: center;
+  }
+
+  .instructions {
+    flex: 1;
+    padding: 24px;
+    padding-top: 5rem;
+    // overflow-y: auto; /* Enable vertical scroll */
+    padding-bottom: 6rem;
+    line-height: 1.5;
+   
+    h2 {
+      font-size: 2rem;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 1rem;
+      color: white;
+    }
+    p {
+      text-align: center;
+    }
+  }
+
+  .bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+    padding: 20px;
+    z-index: 100;
+    button {
+      width: calc(100% - 40px);
+      border-radius: 1rem;
+    }
   }
 }
