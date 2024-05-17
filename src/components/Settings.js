@@ -48,7 +48,7 @@ export default function Settings(props) {
 
       </div>
       <div className="bottom">
-        <button className="button" onClick={props.changeSettings} disabled={!atLeastOneInclude}>
+        <button className="button " onClick={props.changeSettings} disabled={!atLeastOneInclude}>
           Submit
         </button>
       </div>

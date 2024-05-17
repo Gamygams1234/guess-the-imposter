@@ -21,7 +21,7 @@ function App() {
     const storedShowCategory = localStorage.getItem("showCategory");
     return storedShowCategory !== null ? storedShowCategory === "true" : true;
   });
-  const defaultWordArrays =  {
+  const defaultWordArrays = {
     athletes: {
       name: "Athletes",
       include: true,
@@ -354,15 +354,76 @@ function App() {
         // Add more countries as needed
       ],
     },
+    disney: {
+      name: "Disney Characters and Movies",
+      include: true,
+      words: [
+        // Main Disney Characters
+        "Mickey Mouse",
+        "Minnie Mouse",
+        "Donald Duck",
+        "Daisy Duck",
+        "Goofy",
+        "Pluto",
+        "Cinderella",
+        "Snow White",
+        "Ariel",
+        "Belle",
+        "Jasmine",
+        "Mulan",
+        "Simba",
+        "Nala",
+        "Timon",
+        "Pumbaa",
+        "Aladdin",
+        "Genie",
+        "Pocahontas",
+        "Tiana",
+        "Elsa",
+        "Anna",
+        "Olaf",
+        "Woody",
+        "Buzz Lightyear",
+        "Jessie",
+        "Sully",
+        "Mike Wazowski",
+        "Mr. Incredible",
+        "Elastigirl",
+        "Jack Sparrow",
+        "Captain Jack Sparrow",
+        // Popular Disney Movies
+        "The Lion King",
+        "Aladdin",
+        "Beauty and the Beast",
+        "Frozen",
+        "Toy Story",
+        "Finding Nemo",
+        "The Little Mermaid",
+        "Cinderella",
+        "Mulan",
+        "Pocahontas",
+        "Moana",
+        "The Incredibles",
+        "Zootopia",
+        "Tangled",
+        "Brave",
+        "Wreck-It Ralph",
+        "Coco",
+        "Inside Out",
+        "Ratatouille",
+        "The Princess and the Frog",
+        "Up",
+        "Wall-E",
+        // Add more Disney main characters and movies as needed
+      ],
+    },
   };
 
   const hasNewKeys = (defaultObj, storedObj) => {
     const defaultKeys = Object.keys(defaultObj);
     const storedKeys = storedObj ? Object.keys(storedObj) : [];
-    return defaultKeys.some(key => !storedKeys.includes(key));
+    return defaultKeys.some((key) => !storedKeys.includes(key));
   };
-
-
 
   const [wordArrays, setWordArrays] = useState(() => {
     const storedWordArrays = JSON.parse(localStorage.getItem("wordArrays"));
